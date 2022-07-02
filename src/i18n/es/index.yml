@@ -1,4 +1,3 @@
----
 commands:
   lodestone:
     description: 查询 Lodestone 新闻
