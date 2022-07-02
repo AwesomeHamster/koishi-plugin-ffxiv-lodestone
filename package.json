@@ -70,5 +70,8 @@
   "peerDependencies": {
     "@koishijs/plugin-puppeteer": "^3.0.0-rc.0",
     "koishi": "^4.0.0-rc.1"
+  },
+  "dependencies": {
+    "lodestone-news": "^0.0.2"
   }
 }

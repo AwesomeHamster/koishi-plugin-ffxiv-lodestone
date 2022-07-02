@@ -16,6 +16,6 @@ commands:
       category: 指定搜索的类别。
 
     messages:
-      invalid_ragion: 不存在 {0} 的区域，请输入 help lodestone 查询可用的区域。
-      invalid_category: 不存在 {0} 的类别，请输入 help lodestone 查询可用的类别。
+      invalid_ragion: 不存在 {0} 的区域
+      invalid_category: 不存在 {0} 的类别
       service_unavailable: 当前服务不可用，请稍候再试。
