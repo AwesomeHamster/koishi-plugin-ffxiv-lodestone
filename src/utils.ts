@@ -1,15 +1,14 @@
 import { Context } from 'koishi'
-import get, { Locale, News } from 'lodestone-news'
+import get, { Region } from 'lodestone-news'
 
 export const getNews = async (
   count: number,
   category: string = 'topics',
-  ragion: Locale = 'jp',
+  region: Region = 'jp',
 ): Promise<string> => {
-  let { news: json } = await get(ragion, category, 1)
+  let json = await get({ region, category, count: 1 })
   if (json.length > count) json = json.slice(0, count)
-  return json.map((item) => `${item.title}\n${item.url}`)
-  .join('\n\n')
+  return json.map((item) => `${item.title}\n${item.url}`).join('\n\n')
 }
 
 export const getWebpage = async (
