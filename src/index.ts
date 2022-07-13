@@ -1,18 +1,7 @@
 import { Context } from 'koishi'
 
 import * as i18n from './i18n'
-import { getNews } from './utils'
-
-const categories = [
-  'topics',
-  'notices',
-  'maintenance',
-  'updates',
-  'status',
-  'developers',
-]
-
-const ragions = ['jp', 'eu', 'na', 'fr', 'de']
+import { getNews, Region } from 'lodestone-news'
 
 export const name = 'lodestone'
 
@@ -25,15 +14,20 @@ export function apply(ctx: Context, config?: {}): void {
     .option('category', '-c <category:string>', {
       fallback: 'topics',
     })
-    .option('ragion', '-r <ragion:string>', {
+    .option('region', '-r <region:string>', {
       fallback: 'jp',
     })
     .action(async ({ options, session }) => {
-      if (!options) {
-        return getNews(5)
+      try {
+        const newsList = await getNews({
+          count: 3,
+          category: options?.category,
+          region: options?.region as Region,
+        })
+        const news = newsList.map((item) => `${item.title}\n${item.url}`).join('\n\n')
+        return news
+      } catch (e) {
+        return session?.text('')
       }
-      const { category, ragion } = options
-
-      return getNews(5, category, ragion)
     })
 }
