@@ -33,7 +33,7 @@
   },
   "scripts": {
     "build": "constructeur build && tsc --emitDeclarationOnly",
-    "dev": "constructeur build --minify false && tsc --emitDeclarationOnly",
+    "dev": "constructeur dev && tsc --emitDeclarationOnly",
     "test": "mocha -r ts-node/register -r yml-register --extension .spec.ts ./__tests__"
   },
   "bugs": {
