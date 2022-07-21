@@ -24,7 +24,9 @@ export function apply(ctx: Context, config?: {}): void {
           category: options?.category,
           region: options?.region as Region,
         })
-        const news = newsList.map((item) => `${item.title}\n${item.url}`).join('\n\n')
+        const news = newsList
+          .map((item) => `${item.title}\n${item.url}`)
+          .join('\n\n')
         return news
       } catch (e) {
         return session?.text('')
