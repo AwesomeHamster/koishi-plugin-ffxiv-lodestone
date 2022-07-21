@@ -72,6 +72,6 @@
     "koishi": "^4.0.0-rc.1"
   },
   "dependencies": {
-    "lodestone-news": "^0.1.0"
+    "lodestone-news": "^0.1.1"
   }
 }
