@@ -32,8 +32,10 @@
     "url": "git+https://github.com/AwesomeHamster/koishi-plugin-ffxiv-lodestone.git"
   },
   "scripts": {
-    "build": "constructeur build && tsc --emitDeclarationOnly",
-    "dev": "constructeur dev && tsc --emitDeclarationOnly",
+    "build": "constructeur build && yarn tsc",
+    "dev": "constructeur dev && yarn tsc",
+    "tsc": "tsc --emitDeclarationOnly",
+    "clean": "rm -rf ./dist",
     "test": "mocha -r ts-node/register -r yml-register --extension .spec.ts ./__tests__",
     "lint": "eslint src/**/*.ts && yarn prettier --check",
     "format": "yarn prettier --write",
@@ -82,6 +84,6 @@
     "koishi": "^4.0.0-rc.1"
   },
   "dependencies": {
-    "lodestone-news": "^0.1.1"
+    "lodestone-news": "^0.1.2"
   }
 }

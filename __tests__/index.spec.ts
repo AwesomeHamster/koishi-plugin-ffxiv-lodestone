@@ -8,8 +8,8 @@ describe('lodestone', async () => {
   app.plugin(mock)
   app.plugin(lodestone)
 
-  before(async () => app.start())
-  after(async () => app.stop())
+  before(async () => await app.start())
+  after(async () => await app.stop())
 
   const client = app.mock.client('123')
 
