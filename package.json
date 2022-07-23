@@ -65,7 +65,7 @@
     "@hamster-bot/constructeur": "*",
     "@hamster-bot/eslint-config": "^1.0.0",
     "@hamster-bot/prettier-config": "^1.0.0",
-    "@koishijs/plugin-mock": "^1.0.6",
+    "@koishijs/plugin-mock": "^1.0.0",
     "@types/chai": "^4.3.1",
     "@types/mocha": "^9.1.0",
     "@types/node": "^17.0.5",
