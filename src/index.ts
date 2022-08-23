@@ -1,7 +1,7 @@
 import { Context } from 'koishi'
+import { getNews, Region } from 'lodestone-news'
 
 import * as i18n from './i18n'
-import { getNews, Region } from 'lodestone-news'
 
 export const name = 'lodestone'
 
@@ -24,9 +24,7 @@ export function apply(ctx: Context, config?: {}): void {
           category: options?.category,
           region: options?.region as Region,
         })
-        const news = newsList
-          .map((item) => `${item.title}\n${item.url}`)
-          .join('\n\n')
+        const news = newsList.map((item) => `${item.title}\n${item.url}`).join('\n\n')
         return news
       } catch (e) {
         return session?.text('')
