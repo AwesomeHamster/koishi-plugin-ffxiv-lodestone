@@ -8,12 +8,12 @@ describe('lodestone', async () => {
   app.plugin(mock)
   app.plugin(lodestone)
 
-  before(async () => app.start())
-  after(async () => app.stop())
+  before(() => app.start())
+  after(() => app.stop())
 
   const client = app.mock.client('123')
 
   it('should get news', async () => {
-    await client.shouldReply('lodestone')
+    await client.shouldReply('lodestone.news')
   }).timeout(0)
 })

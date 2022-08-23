@@ -32,8 +32,10 @@
     "url": "git+https://github.com/AwesomeHamster/koishi-plugin-ffxiv-lodestone.git"
   },
   "scripts": {
-    "build": "constructeur build && tsc --emitDeclarationOnly",
-    "dev": "constructeur build --minify false && tsc --emitDeclarationOnly",
+    "build": "constructeur build && yarn tsc",
+    "dev": "constructeur dev && yarn tsc",
+    "tsc": "tsc --emitDeclarationOnly",
+    "clean": "rm -rf ./dist",
     "test": "mocha -r ts-node/register -r yml-register --extension .spec.ts ./__tests__",
     "lint": "eslint src/**/*.ts && yarn prettier --check",
     "format": "yarn prettier --write",
@@ -61,9 +63,9 @@
   "prettier": "@hamster-bot/prettier-config",
   "devDependencies": {
     "@hamster-bot/constructeur": "*",
-    "@hamster-bot/eslint-config": "^1.0.0",
-    "@hamster-bot/prettier-config": "^1.0.0",
-    "@koishijs/plugin-mock": "^1.0.6",
+    "@hamster-bot/eslint-config": "*",
+    "@hamster-bot/prettier-config": "*",
+    "@koishijs/plugin-mock": "^2.0.0",
     "@types/chai": "^4.3.1",
     "@types/mocha": "^9.1.0",
     "@types/node": "^17.0.5",
@@ -71,6 +73,7 @@
     "@typescript-eslint/parser": "^5.30.5",
     "chai": "^4.3.4",
     "eslint": "^8.19.0",
+    "eslint-import-resolver-typescript": "^3.4.1",
     "mocha": "^9.1.3",
     "prettier": "^2.7.1",
     "ts-node": "^10.8.1",
@@ -78,7 +81,10 @@
     "yml-register": "^1.0.0"
   },
   "peerDependencies": {
-    "@koishijs/plugin-puppeteer": "^3.0.0-rc.0",
-    "koishi": "^4.0.0-rc.1"
+    "@koishijs/plugin-puppeteer": "^3.1.1",
+    "koishi": "^4.7.0"
+  },
+  "dependencies": {
+    "lodestone-news": "^0.1.2"
   }
 }
