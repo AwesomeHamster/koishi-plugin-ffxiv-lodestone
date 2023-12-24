@@ -64,6 +64,7 @@
   "devDependencies": {
     "@hamster-bot/eslint-config": "*",
     "@hamster-bot/prettier-config": "*",
+    "@hamster-bot/tsconfig": "^0.0.2",
     "@koishijs/plugin-mock": "^2.0.0",
     "@types/chai": "^4.3.1",
     "@types/mocha": "^9.1.0",
