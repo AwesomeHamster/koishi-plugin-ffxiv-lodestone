@@ -6,10 +6,14 @@ on:
 
 jobs:
   publish:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: AwesomeHamster/actions-publish@master
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          test: yarn test
+    uses: AwesomeHamster/workflows/.github/workflows/publish.yml@master
+    permissions:
+      contents: write
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    with:
+      yarn-no-immutable: true
+      test-before-publish: true
+    secrets:
+      npm-token: ${{ secrets.NPM_TOKEN }}
+      github-token: ${{ secrets.GITHUB_TOKEN }}
